@@ -712,12 +712,17 @@ ValineFactory.prototype.bind = function (option) {
     });
 
     let insertDom = (rt, node, mt) => {
-
+        const {adminName, adminEmail, adminImg} = root.config
+        const isAdmin = rt.get('mail') === adminEmail && rt.get('nick') === adminName
+        const nickName = isAdmin ? `<span class="admin">${rt.get("nick")}</span>` : rt.get("nick")
         let _vcard = Utils.create('div', {
             'class': 'vcard',
             'id': rt.id
         });
         let _img = _avatarSetting['hide'] ? '' : `<img class="vimg" src="${_avatarSetting['cdn']+md5(rt.get('mail'))+_avatarSetting['params']}">`;
+        if(isAdmin) {
+            _img = adminImg
+        }
         let ua = rt.get('ua') || '';
         let uaMeta = '';
         if (ua) {
@@ -729,7 +734,7 @@ ValineFactory.prototype.bind = function (option) {
         if(root.config.path === '*') uaMeta = `<a href="${rt.get('url')}" class="vsys">${rt.get('url')}</a>`
         let _nick = '';
         let _t = rt.get('link')?(/^https?\:\/\//.test(rt.get('link')) ? rt.get('link') : 'http://'+rt.get('link')) : '';
-        _nick = _t ? `<a class="vnick" rel="nofollow" href="${_t}" target="_blank" >${rt.get("nick")}</a>` : `<span class="vnick">${rt.get('nick')}</span>`;
+        _nick = _t ? `<a class="vnick" rel="nofollow" href="${_t}" target="_blank" >${nickName}</a>` : `<span class="vnick">${nickName}</span>`;
         _vcard.innerHTML = `${_img}
             <div class="vh" rootid=${rt.get('rid') || rt.id}>
                 <div class="vhead">${_nick} ${uaMeta}</div>
