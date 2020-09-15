@@ -720,7 +720,7 @@ ValineFactory.prototype.bind = function (option) {
             'id': rt.id
         });
         let _img = _avatarSetting['hide'] ? '' : `<img class="vimg" src="${_avatarSetting['cdn']+md5(rt.get('mail'))+_avatarSetting['params']}">`;
-        if(isAdmin) {
+        if(isAdmin && adminImg) {
             _img = adminImg
         }
         let ua = rt.get('ua') || '';

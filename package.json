@@ -1,6 +1,6 @@
 {
   "name": "@carrotwu/valine",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple comment system based on Leancloud.",
   "main": "/dist/Valine.min.js",
   "author": "carrotWu",
