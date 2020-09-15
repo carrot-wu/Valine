@@ -721,7 +721,7 @@ ValineFactory.prototype.bind = function (option) {
         });
         let _img = _avatarSetting['hide'] ? '' : `<img class="vimg" src="${_avatarSetting['cdn']+md5(rt.get('mail'))+_avatarSetting['params']}">`;
         if(isAdmin && adminImg) {
-            _img = adminImg
+            _img = `<img class="vimg" src="${adminImg}" alt="">`
         }
         let ua = rt.get('ua') || '';
         let uaMeta = '';
