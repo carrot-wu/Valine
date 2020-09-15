@@ -1,14 +1,17 @@
 {
-  "name": "valine",
-  "version": "1.4.13",
+  "name": "@carrotwu/valine",
+  "version": "1.0.0",
   "description": "A simple comment system based on Leancloud.",
   "main": "/dist/Valine.min.js",
-  "author": "xCss <xioveliu@gmail.com> (https://github.com/xCss)",
+  "author": "carrotWu",
   "scripts": {
     "test": "webpack",
     "build": "webpack",
     "dev": "webpack-dev-server --env.dev",
     "clean": "rm -rf dist/* "
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "simple",
@@ -19,7 +22,7 @@
   "license": "GPL-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xcss/Valine.git"
+    "url": "https://github.com/carrot-wu/Valine.git"
   },
   "homepage": "https://github.com/xcss/Valine#readme",
   "devDependencies": {

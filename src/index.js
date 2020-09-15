@@ -712,12 +712,17 @@ ValineFactory.prototype.bind = function (option) {
     });
 
     let insertDom = (rt, node, mt) => {
-
+        const {adminName, adminEmail, adminImg} = root.config
+        const isAdmin = rt.get('mail') === adminEmail && rt.get('nick') === adminName
+        const nickName = isAdmin ? `<span class="admin">${rt.get("nick")}</span>` : rt.get("nick")
         let _vcard = Utils.create('div', {
             'class': 'vcard',
             'id': rt.id
         });
         let _img = _avatarSetting['hide'] ? '' : `<img class="vimg" src="${_avatarSetting['cdn']+md5(rt.get('mail'))+_avatarSetting['params']}">`;
+        if(isAdmin && adminImg) {
+            _img = adminImg
+        }
         let ua = rt.get('ua') || '';
         let uaMeta = '';
         if (ua) {
