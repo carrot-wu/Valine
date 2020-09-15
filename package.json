@@ -10,6 +10,9 @@
     "dev": "webpack-dev-server --env.dev",
     "clean": "rm -rf dist/* "
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "simple",
     "easy-to-use",
@@ -19,7 +22,7 @@
   "license": "GPL-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xcss/Valine.git"
+    "url": "https://github.com/carrot-wu/Valine.git"
   },
   "homepage": "https://github.com/xcss/Valine#readme",
   "devDependencies": {
