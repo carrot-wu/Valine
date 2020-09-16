@@ -734,7 +734,7 @@ ValineFactory.prototype.bind = function (option) {
         if(root.config.path === '*') uaMeta = `<a href="${rt.get('url')}" class="vsys">${rt.get('url')}</a>`
         let _nick = '';
         let _t = rt.get('link')?(/^https?\:\/\//.test(rt.get('link')) ? rt.get('link') : 'http://'+rt.get('link')) : '';
-        _nick = _t ? `<a class="vnick" rel="nofollow" href="${_t}" target="_blank" >${rt.get("nick")}</a>` : `<span class="vnick">${rt.get('nick')}</span>`;
+        _nick = _t ? `<a class="vnick" rel="nofollow" href="${_t}" target="_blank" >${nickName}</a>` : `<span class="vnick">${nickName}</span>`;
         _vcard.innerHTML = `${_img}
             <div class="vh" rootid=${rt.get('rid') || rt.id}>
                 <div class="vhead">${_nick} ${uaMeta}</div>
